@@ -6,17 +6,19 @@ class ImageSlider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedImage: "",
+      selectedImage: [],
       data: []
     };
   }
 
   handleImageClick = (image) => {
+    console.log(this.selectedImage)
     this.setState({ selectedImage: image });
+
   };
 
   componentDidMount() {
-    getMemes().then((basel) => this.setState({ data: basel.data.memes }));
+    getMemes().then((basel) => this.setState({ data: basel }));
   }
 
   render() {
@@ -30,13 +32,13 @@ class ImageSlider extends Component {
               <img
                 src={image.url}
                 alt={`Image ${index + 1}`}
-                onClick={() => this.handleImageClick(image.url)}
+                onClick={() => this.handleImageClick(image)}
               />
             </div>
           ))}
 
         </div>
-        <ImageCaption selectedImage={this.state.selectedImage} />
+        <ImageCaption selectedImage={this.state.selectedImage.url} id={this.state.selectedImage.id} />
       </div>
     );
   }
