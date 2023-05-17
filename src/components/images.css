@@ -7,6 +7,8 @@
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
+    order: 1;
+
 }
 
 .image-wrapper {
@@ -23,8 +25,15 @@
 
 .selected-image {
     margin-top: 20px;
+
 }
 
 .selected-image img {
     max-width: 300px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+
 }
