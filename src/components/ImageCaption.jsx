@@ -6,14 +6,15 @@ class ImageCaption extends Component {
 
 
     render() {
-        const { selectedImage } = this.props;
+        const { selectedImage, id } = this.props;
+        console.log(id);
         return (
             <div> <div className="selected-image">
-            {selectedImage && <img src={selectedImage} alt="Selected" />}
-        </div>
-         </div>
-        
-           
+                {selectedImage && <img src={selectedImage} alt="Selected" />}
+            </div>
+            </div>
+
+
         );
     }
 }
