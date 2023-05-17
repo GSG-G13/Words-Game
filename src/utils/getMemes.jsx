@@ -15,9 +15,9 @@ const objectToQueryParam = (obj) => {
   return "?" + params.join("&");
 };
 
-export const memeCaption = async (template, topText, bottomText) => {
+export const memeCaption = async (selectedImage, topText, bottomText) => {
   const params = {
-    template_id: template.id,
+    template_id: selectedImage,
     text0: topText,
     text1: bottomText,
     username: "xzk03017",
