@@ -1,0 +1,30 @@
+.slider {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.image-wrapper {
+    padding: 4px;
+    background-color: rgb(62, 62, 235);
+}
+
+.slider img {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.selected-image {
+    margin-top: 20px;
+}
+
+.selected-image img {
+    max-width: 300px;
+}
