@@ -7,7 +7,7 @@ class ImageSlider extends Component {
     super(props);
     this.state = {
       selectedImage: [],
-      data: []
+      data: [],
     };
   }
 
@@ -33,15 +33,17 @@ class ImageSlider extends Component {
                 src={image.url}
                 alt={`Image ${index + 1}`}
                 onClick={() => this.handleImageClick(image)}
+
               />
             </div>
           ))}
-
         </div>
         <ImageCaption selectedImage={this.state.selectedImage.url} id={this.state.selectedImage.id} />
       </div>
-    );
+    )
   }
+
+
 }
 
 export default ImageSlider;
