@@ -30,34 +30,38 @@ class ImageCaption extends Component {
     const { selectedImage } = this.props;
 
     return (
-      <div>
+      <div className="👍">
         <div className="selected-image">
           {selectedImage && generatedMeme && (
             <img src={generatedMeme} alt="Selected" />
           )}
         </div>
-        <div>
-          <input
-            className="topText"
-            name="topText"
-            value={topText}
-            onChange={(e) =>
-              this.setState({
-                topText: e.target.value,
-              })
-            }
-          />
-          <input
-            className="bottomText"
-            name="bottomText"
-            value={bottomText}
-            onChange={(e) =>
-              this.setState({
-                bottomText: e.target.value,
-              })
-            }
-          />
-          <button onClick={this.handleButtonClick}>Generate meme</button>
+        <div className="🤦‍♂️">
+          <div className="😒">
+            <input
+            placeholder="Top text"
+              className="topText"
+              name="topText"
+              value={topText}
+              onChange={(e) =>
+                this.setState({
+                  topText: e.target.value,
+                })
+              }
+            />
+            <input
+            placeholder="Bottom text"
+              className="bottomText"
+              name="bottomText"
+              value={bottomText}
+              onChange={(e) =>
+                this.setState({
+                  bottomText: e.target.value,
+                })
+              }
+            />
+          </div>
+          <button onClick={this.handleButtonClick} className="😎">Generate meme</button>
         </div>
       </div>
     );

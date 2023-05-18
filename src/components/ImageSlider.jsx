@@ -9,9 +9,13 @@ class ImageSlider extends Component {
     this.state = {
       selectedImage: [],
       data: [],
+      active:0
     };
   }
 
+  handleActive = (id) => {
+    this.setState({ active: id });
+  };
   handleImageClick = (image) => {
     this.setState({ selectedImage: image });
   };
@@ -24,7 +28,7 @@ class ImageSlider extends Component {
     const { data } = this.state;
 
     return (
-      <div className="container">
+      <div className="🎮">
         <div className="slider">
           {data.map((image, index) => (
             <div id={image.id} key={index} className="image-wrapper">
@@ -32,7 +36,11 @@ class ImageSlider extends Component {
                 id={image.id}
                 src={image.url}
                 alt={`Image ${index + 1}`}
-                onClick={() => this.handleImageClick(image)}
+                className={this.state.active === image.id ?'active':""}
+                onClick={() => {
+                  this.handleImageClick(image)
+                  this.handleActive(image.id)
+                  }}
               />
             </div>
           ))}
